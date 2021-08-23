@@ -6,34 +6,54 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className="nav">
-        <div className="nav--left">
-          <span>
-            <a href="/">KBTUS CLASS MANAGER</a>
-          </span>
-        </div>
-        <div className="nav--right">
-          <span>로그인 | 회원가입</span>
-          <span>이용안내</span>
-          <span>문의하기</span>
-        </div>
-      </div>
+      <Header />
       <div className="contents">
-        <div className="menu">
-          <div className="menu--img"></div>
-          <div className="menu--text">남은 강의 체크</div>
-        </div>
-        <div className="menu">
-          <div className="menu--img"></div>
-          <div className="menu--text">시간표 입력</div>
-        </div>
-        <div className="menu">
-          <div className="menu--img"></div>
-          <div className="menu--text">채플 진행도</div>
-        </div>
+        <Menu />
       </div>
     </div>
   );
 }
+
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="header--text">
+        <span>
+          <a href="/" className="text--link">
+            침신대 수업 도우미
+          </a>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+const Menu = () => {
+  return (
+    <>
+      <div className="menu">
+        <div className="menu--img"></div>
+        <div className="menu--text">
+          <span>남은 강의 체크</span>
+          <span>✅</span>
+        </div>
+      </div>
+      <div className="menu">
+        <div className="menu--img"></div>
+        <div className="menu--text">
+          <span>시간표 입력</span>
+          <span>📝</span>
+        </div>
+      </div>
+      <div className="menu">
+        <div className="menu--img"></div>
+        <div className="menu--text">
+          <span>채플 진행도</span>
+          <span>📆</span>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default App;

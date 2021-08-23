@@ -1,52 +1,98 @@
 * {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
 
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Gowun Batang', serif;
+  background-color: #636e72;
 }
-.nav {
+
+.header {
   width: 100%;
-  height: 100px;
-  padding: 5px 100px;
-  background-color: #bdc3c7;
+  height: 150px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-end;
+}
+.header .header--text {
+  width: 1000px;
+  color: #fff;
+  font-size: 36px;
+  text-align: left;
+}
+.header .header--text .text--link {
+  position: relative;
+}
+.header .header--text .text--link:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 0%;
+  border-bottom: 2px solid;
+  margin-top: 15px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, width 0.35s;
+  transition: opacity 0.35s, width 0.35s;
+}
+.header .header--text .text--link:hover::after {
+  opacity: 1;
+  width: 100%;
 }
 
 .contents {
   width: 100%;
-  height: calc(100vh - 100px);
-  background-color: #adc;
+  height: calc(100vh - 150px);
+  padding-top: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 }
 .contents .menu {
-  width: 400px;
-  height: 300px;
-  background-color: coral;
+  width: 300px;
+  height: 210px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5%;
+  border-radius: 7px;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.contents .menu:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.contents .menu:nth-child(2) {
+  margin: 0 50px;
 }
 
 .contents .menu .menu--img {
-  width: 95%;
-  height: 80%;
-  background-color: darkgoldenrod;
-  overflow: hidden;
+  width: 280px;
+  height: 150px;
+  background-color: #192a56;
+  border-radius: 7px;
 }
 .contents .menu .menu--text {
-  width: 95%;
-  height: 20%;
-  background-color: darkgreen;
-  overflow: hidden;
+  width: 280px;
+  height: 20px;
+  color: #222;
+  padding-left: 3px;
+  margin-top: 13px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
