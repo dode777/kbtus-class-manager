@@ -1,0 +1,32 @@
+{
+  "name": "kbtus-class-manager",
+  "version": "1.0.0",
+  "description": "kbtus class manager",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dode777/kbtus-class-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dode777/kbtus-class-manager/issues"
+  },
+  "homepage": "https://github.com/dode777/kbtus-class-manager#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.6"
+  }
+}
