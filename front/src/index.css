@@ -11,8 +11,14 @@ a:visited {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Gowun Batang', serif;
+  font-family: 'Nanum Gothic Coding', monospace;
   background-color: #636e72;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
@@ -49,7 +55,7 @@ body {
   width: 100%;
 }
 
-.contents {
+.contents_main {
   width: 100%;
   height: calc(100vh - 150px);
   padding-top: 100px;
@@ -58,7 +64,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
-.contents .menu {
+.contents_main .menu {
   width: 300px;
   height: 210px;
   display: flex;
@@ -70,20 +76,20 @@ body {
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.contents .menu:hover {
+.contents_main .menu:hover {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-.contents .menu:nth-child(2) {
+.contents_main a:nth-child(2) {
   margin: 0 50px;
 }
 
-.contents .menu .menu--img {
+.contents_main .menu .menu--img {
   width: 280px;
   height: 150px;
   background-color: #192a56;
   border-radius: 7px;
 }
-.contents .menu .menu--text {
+.contents_main .menu .menu--text {
   width: 280px;
   height: 20px;
   color: #222;
@@ -95,4 +101,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.contents_sub {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contents_sub .guide .contents .guide_box {
+  height: 210px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.guide_box .guide--img {
+  width: 300px;
+  height: 210px;
+  margin-right: 50px;
+  border-radius: 10px;
+}
+.guide_box .guide--text {
+  text-align: left;
+  color: #fff;
+}
+.guide_box .guide--text p:not(:nth-child(2)) {
+  font-weight: 700;
+}
+.guide--text .description {
+  margin: 30px 0 100px 0;
 }
