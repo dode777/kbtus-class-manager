@@ -31,29 +31,36 @@ const Header = () => {
 const Menu = () => {
   return (
     <>
-      <div className="menu">
-        <div className="menu--img"></div>
-        <div className="menu--text">
-          <span>남은 강의 체크</span>
-          <span>✅</span>
+      <a href="/lectures">
+        <div className="menu">
+          <div className="menu--img"></div>
+          <div className="menu--text">
+            <span>남은 강의 체크</span>
+            <span>✅</span>
+          </div>
         </div>
-      </div>
-      <div className="menu">
-        <div className="menu--img"></div>
-        <div className="menu--text">
-          <span>시간표 입력</span>
-          <span>📝</span>
+      </a>
+      <a href="/timetable">
+        <div className="menu">
+          <div className="menu--img"></div>
+          <div className="menu--text">
+            <span>시간표 입력</span>
+            <span>📝</span>
+          </div>
         </div>
-      </div>
-      <div className="menu">
-        <div className="menu--img"></div>
-        <div className="menu--text">
-          <span>채플 진행도</span>
-          <span>📆</span>
+      </a>
+      <a href="/chapel">
+        <div className="menu">
+          <div className="menu--img"></div>
+          <div className="menu--text">
+            <span>채플 진행도</span>
+            <span>📆</span>
+          </div>
         </div>
-      </div>
+      </a>
     </>
   );
 };
+
 
 export default App;
