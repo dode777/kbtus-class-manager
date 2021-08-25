@@ -1,10 +1,19 @@
 /* eslint-disable */
 
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './routers/Router';
+
 import './App.css';
 
-function App() {
-  return;
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
