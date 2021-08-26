@@ -20,7 +20,7 @@ const Chapel = () => {
             <span>52%</span>
           </p>
           <p>
-            <span>전체 진행률</span>
+            <span>진행률</span>
             <span>73%</span>
           </p>
         </div>
