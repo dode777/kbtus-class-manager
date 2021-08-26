@@ -1,0 +1,124 @@
+/* Side Bar */
+.side-bar {
+  z-index: 99;
+  width: 270px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 0px;
+  background-color: var(--side-bar-background);
+}
+
+/* Side Bar - Avatar */
+.side-bar .avatar {
+  width: 230px;
+  height: 68px;
+  margin-top: 50px;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+}
+.avatar .user--img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 2.5px 2.5px 2.6px;
+}
+.avatar .info {
+  height: 100%;
+  margin: 2px 40px 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.avatar .info .user--name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.avatar .info .user--num {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #757575;
+}
+.avatar .logout {
+  display: block;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s ease;
+}
+.avatar .logout:hover {
+  transform: translateX(5px);
+}
+
+/* Side Bar - 구분선 */
+.side-bar hr {
+  margin: 30px 0;
+  width: 200px;
+  height: 1px;
+  border: 0;
+  opacity: 0.3;
+  background-color: rgb(134, 134, 134);
+}
+
+/* Side Bar - Menu */
+.side-bar .menu-wrapper {
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-wrapper .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-wrapper .menu .menu-box {
+  width: 230px;
+  height: 50px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 10px;
+  color: #2d3436;
+  transition: all 0.3s ease;
+}
+.menu-wrapper .menu .menu-box:hover {
+  background-color: #e7e9eb;
+  /* background-color: var(--blue); */
+}
+.menu-wrapper .menu .menu-box img {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+}
+.chapel--icon {
+  width: 26px !important;
+  height: 25px !important;
+  margin-right: 12px !important;
+  margin-left: -2px;
+}
+.lectures--icon {
+  width: 24px !important;
+  height: 24px !important;
+  margin-right: 14px !important;
+  margin-left: -2px;
+}
+.menu-wrapper .menu .menu-box p {
+  margin-top: 3px;
+}
+.icon_info {
+  margin-top: 1px;
+}
