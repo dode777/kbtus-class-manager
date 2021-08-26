@@ -1,0 +1,19 @@
+.content-wrapper .content-header {
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: right;
+}
+
+.content-wrapper .content-header .update {
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  border: 1px solid #a1c4fd62;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb 51%, #a1c4fd) var(--x, 110%) / 200%;
+}
+.content-header .update:hover {
+  --x: 0;
+}
