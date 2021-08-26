@@ -1,0 +1,28 @@
+.lecture-wrapper {
+  width: 100%;
+  margin-top: 30px;
+}
+.lecture-wrapper .lecture-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.lecture-content .line {
+  border-right: 1px solid #eee;
+  height: 300px;
+  width: 0.1px;
+}
+.lecture-content .lecture-box {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+.lecture-content .lecture-box .title {
+  width: 100%;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: var(--deepest-blue);
+}
+.lecture-content .lecture-box li {
+  margin-bottom: 15px;
+}
