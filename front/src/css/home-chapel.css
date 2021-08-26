@@ -1,0 +1,69 @@
+.chapel-wrapper {
+  width: calc(50% - 15px);
+  margin-right: 30px;
+}
+
+.chapel-content {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chapel-content input {
+  -webkit-appearance: none;
+  width: 80%;
+}
+.chapel-content input,
+.chapel-content input:focus,
+.chapel-content input:active {
+  text-decoration: none;
+  outline: none;
+  cursor: default !important;
+}
+.chapel-content input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-image: url('../img/downArrow.png');
+  background-size: contain;
+  cursor: pointer;
+}
+.chapel-content progress {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.chapel-content .text {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.chapel-content .progress {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.chapel-content .progress p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.chapel-content .progress p span:nth-child(2) {
+  color: var(--deepest-blue);
+}
+.chapel-content .chance-times {
+  width: 150px;
+  margin-top: 50px;
+}
+.chapel-content .chance-times p {
+  display: flex;
+  justify-content: space-between;
+}
+.chapel-content .chance-times p span:nth-child(2) {
+  font-weight: 700;
+}
