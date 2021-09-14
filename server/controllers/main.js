@@ -17,17 +17,22 @@ const getMainData = async (req, res) => {
 
     const page = (await browser.pages())[0];
 
+    await page.setDefaultNavigationTimeout(0);
+
     page.setViewport({
       width: 500,
       height: 500,
     });
 
-    await page.goto(url);
+    await page.goto(url, {
+      waitUntil: 'networkidle0',
+    });
+
     await worker.load();
 
     // 로그인 실패 시 While문으로 반복
     while (!isLoggedIn) {
-      await page.waitForTimeout(2000);
+      await page.waitForSelector('input[name="txtCaptcha"]');
       // 보안문자 캡쳐
       await page.screenshot({
         path: `./captchaImg.png`,
@@ -80,8 +85,6 @@ const getMainData = async (req, res) => {
       if (page.url() == 'https://truth.kbtus.ac.kr:8443/KBTUS_HAKSA/mainPage.do') {
         isLoggedIn = true;
 
-        await worker.terminate();
-
         await page.waitForSelector('a.btn_menu_open');
         await page.click('a.btn_menu_open');
         await page.waitForSelector('li.mn_LESN > a.bgbt');
@@ -89,31 +92,36 @@ const getMainData = async (req, res) => {
         await page.waitForSelector('li.mn_LESN > ul > li.fd:nth-child(1)');
         await page.click('li.mn_LESN > ul > li.fd:nth-child(1)');
 
-        await page.waitForTimeout(2000);
-
+        await page.waitForSelector('iframe#frame300017');
         const frame = page.frames().find((f) => f.name() === 'frame300017');
 
         // 학번, 이름
+        await frame.waitForSelector('#S_HAKBUN');
+        await frame.waitForSelector('#S_NAME');
+
         const getHakbun = await frame.$('#S_HAKBUN');
         const getName = await frame.$('#S_NAME');
 
         // 이번 학기 수업 수강 정보
-        let lectures = [];
-
         await frame.waitForTimeout(3000);
+
         const getLectures = await frame.$$eval('#dataGrid > tbody > tr > td', (data) => {
           return data.map((data) => data.textContent);
         });
 
+        let lectures = [];
+
         for (i = 0; getLectures.length > i; i += 9) {
-          lectures.push([getLectures[i], getLectures[i + 2], getLectures[i + 3], getLectures[i + 4]]);
+          lectures.push([getLectures[i + 2], getLectures[i + 3], getLectures[i + 4]]);
         }
 
         const user_hakbun = await frame.evaluate((getHakbun) => getHakbun.value, getHakbun);
         const user_name = await frame.evaluate((getName) => getName.value, getName);
 
         // 결과값 전송
-        res.send({ 이름: user_name, 학번: user_hakbun, 강의정보: lectures });
+        await browser.close();
+        await worker.terminate();
+        res.json({ 이름: user_name, 학번: user_hakbun, 강의정보: lectures });
         break;
       }
       await page.reload(url);
